@@ -96,6 +96,6 @@ public class Q2 {
     }
         while (lightning.getDirection() != Direction.EAST){
             lightning.turnLeft();
-            //lightning job finishes here
+            //lightning's job finishes here
         }
 }}
