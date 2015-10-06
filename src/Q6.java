@@ -23,8 +23,10 @@ public class Q6 {
         
         City kw = new City();
         
+        //Our robot lightning will be traveling around each square.
         Robot lightning = new Robot (kw, 3, 3, Direction.SOUTH);
         
+        //All the walls are seperated depending on which square it is.
         new Wall (kw, 1, 1, Direction.NORTH);
         new Wall (kw, 1, 2, Direction.NORTH);
         new Wall (kw, 1, 2, Direction.EAST);
@@ -64,6 +66,7 @@ public class Q6 {
         for (int sidesOfSquare = 4; sidesOfSquare > 0; sidesOfSquare = sidesOfSquare - 1){
             for (int move = 3; move > 0; move = move - 1){
                 lightning.move();
+                //The algorithm for going around the square.
             }
             
             if (lightning.getStreet() != 3){
@@ -71,10 +74,13 @@ public class Q6 {
             
             else if (lightning.getAvenue() != 3){
                 lightning.turnLeft();
+                //The last two algorithms are for lightning to decide if she is suppose to go around the
+                //square again.
             }
             
             if (lightning.getAvenue() == 3 && lightning.getStreet() == 3 && lightning.getDirection() != Direction.SOUTH){
                 sidesOfSquare = sidesOfSquare + 4;
+                //This algorithm resets everything until lightning returns to her original spot.
             }
         }
     }
